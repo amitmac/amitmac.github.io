@@ -53,7 +53,7 @@
             </nav>
             <div class="container">
                 <div class="col-sm-10 col-sm-offset-1" id="indexwrapper">
-                    <h2>Basic Machine Learning</h2>
+                    <h3>Basic Machine Learning</h3>
                     <hr>
                     <br>
                     <div class="row">

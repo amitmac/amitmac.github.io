@@ -38,7 +38,7 @@
         <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../js/script.js"></script>
 
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body class="blog">
         <div id="">
@@ -52,7 +52,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand active" href="./" id="home">About Learning</a>
+                        <a class="navbar-brand active" href="./" id="home">ABOUT LEARNING</a>
                     </div>
                     <!--normal header-->
                     <div class="navbar-collapse collapse">
