@@ -29,7 +29,7 @@ body {
     font-size: 15px;
 }
 body.home{
-    background: url('../images/nebula.jpg') no-repeat center center fixed;
+    background: url('../images/stars6.jpg') no-repeat center center fixed;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -109,14 +109,16 @@ pre {
 hr { 
     border-top: 1px solid #8c8b8b;
 }
+.showcase {
+    border: 1px solid black;
+    border-radius: 2px;
+}
 .post {
-    width: 250px;
-    min-height: 330px;
     margin-bottom: 20px;
     margin-left: 15px;
     margin-right: 15px;
     float: left;
-    border: 2px solid black;
+    border: 1px solid black;
     background-color: white;
     border-radius: 5px
 }
@@ -135,5 +137,6 @@ hr {
     padding: 2px;
     margin-bottom: 10px;
     width: 100%;
-    height: 245px
+    height: auto;
 }
+.top-buffer { margin-top:20px; }
