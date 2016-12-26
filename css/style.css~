@@ -140,6 +140,6 @@ hr {
     height: auto;
 }
 .top-buffer { margin-top:20px; }
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-    background-color: #000;
+.navbar-collapse {
+    background-color: #222;
 }
