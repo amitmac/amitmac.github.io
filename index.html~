@@ -67,6 +67,14 @@
                                 <h4>Perceptron Learning Algorithm</h4>
                             </a>
                         </div>
+                        <div class="col-md-4">
+                            <a href="posts/2016-12-LR/index.html">
+                                <div class="post">
+                                    <img src="images/linear-reg-2.png">
+                                </div>
+                                <h4>Linear Regression</h4>
+                            </a>
+                        </div>
                     </div>
                     <hr>
                 </div>
