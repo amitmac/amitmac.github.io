@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>Perceptron - About Learning</title>
@@ -10,11 +10,11 @@
         <!--removed html from url but still is html-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
+        <link href="http://amitmac.github.io/posts/2016-12-PLA/" rel="canonical" />
         <link rel="shortcut icon" href="../../images/favicon.ico">
         <link rel="stylesheet" type="text/css" href="../../jquery-ui-1.11.4/jquery-ui.css">
         <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
         <link href="../../css/sticky-footer-navbar.css" rel="stylesheet">
         <!--<link rel="stylesheet" href="../../css/default.css">-->
         <link rel="stylesheet" href="../../css/style.css">
@@ -179,8 +179,32 @@ print(probability/1000)
 </code></pre>
                         </div>  
                     </div>
+                    <div id="disqus_thread"></div>
+                    <script>
+                        /**
+                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                         */
+                        
+                        var disqus_config = function () {
+                            this.page.url = "http://amitmac.github.io/posts/2016-12-PLA/";  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = "/posts/2016-12-PLA/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+
+                        (function() {  // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            
+                            s.src = '//amitmac-1.disqus.com/embed.js';
+                            
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!--                <script src="../../js/disqus.js"></script>-->
                 </div>
             </div>
         </div>
+    <script id="dsq-count-scr" src="//amitmac-1.disqus.com/count.js" async></script>
     </body>
 </html>
