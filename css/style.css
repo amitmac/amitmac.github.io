@@ -29,7 +29,7 @@ body {
     font-size: 15px;
 }
 body.home{
-    background: url('../images/stars6.jpg') no-repeat center center fixed;
+    background: url('../images/stars.jpg') no-repeat center center fixed;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -93,11 +93,11 @@ a:visited {
     text-decoration: none;
 }
 a:hover {
-    color: red;
+    color: #35586C;
     text-decoration: none;
 }
 a:active {
-    color: black;
+    color: #35586C;
     text-decoration: none;
 }
 p{

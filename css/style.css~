@@ -93,11 +93,11 @@ a:visited {
     text-decoration: none;
 }
 a:hover {
-    color: red;
+    color: #35586C;
     text-decoration: none;
 }
 a:active {
-    color: black;
+    color: #35586C;
     text-decoration: none;
 }
 p{
@@ -116,7 +116,7 @@ hr {
 .post {
     margin-bottom: 20px;
     margin-left: 0;
-    margin-right: 15px;
+    margin-right: 20px;
     float: left;
     border: 1px solid black;
     background-color: white;

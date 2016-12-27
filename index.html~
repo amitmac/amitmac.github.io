@@ -75,6 +75,14 @@
                                 <h4>Linear Regression</h4>
                             </a>
                         </div>
+                        <div class="col-md-4">
+                            <a href="posts/2016-12-LOGREG/index.html">
+                                <div class="post">
+                                    <img src="images/log-reg.png">
+                                </div>
+                                <h4>Logistic Regression</h4>
+                            </a>
+                        </div>
                     </div>
                     <hr>
                 </div>
