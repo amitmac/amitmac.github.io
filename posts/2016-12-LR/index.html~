@@ -103,7 +103,7 @@ To minimize the error function $ J $<strong> </strong>we'd have to adjust $ \t
 </ul>
 <div class="row top-buffer">
     <div class="col-md-8 col-md-offset-2">
-        <img class="aligncenter" src="images/linear-theta-update.png" height="200px" alt="linear regression" />
+        <img class="aligncenter" src="images/linear-theta-update.png" height="200px" alt="linear regression" style="margin-left:100px;"/>
     </div>
 </div>
 To implement above steps we use Gradient Descent Algorithm which a simple equation. We repeat the following step until the convergence:
