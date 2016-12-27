@@ -29,7 +29,7 @@ body {
     font-size: 15px;
 }
 body.home{
-    background: url('../images/stars6.jpg') no-repeat center center fixed;
+    background: url('../images/stars.jpg') no-repeat center center fixed;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
