@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Contact - About Learning</title>
+        <title>About Learning</title>
 		<meta charset="utf-8">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <!--mobile first-->
@@ -10,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-        <link rel="shortcut icon" href="/images/favicon.ico">
+        <link rel="shortcut icon" href="images/favicon.ico">
         <link rel="stylesheet" type="text/css" href="jquery-ui-1.11.4/jquery-ui.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -25,10 +26,19 @@
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
 
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-65608932-1', 'auto');
+            ga('send', 'pageview');
+        </script>
     </head>
-    <body>
-        <div id="wrap">
+    <body class="home">
+        <div id="">
             <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
                 <div class="container">
                     <!--Toggle header for mobile-->
@@ -46,23 +56,24 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="index.html"><span class="glyphicon glyphicon-pencil"></span>  Blog</a></li>
                             <li><a href="about.html"><span class="glyphicon glyphicon-user"></span>  About</a></li>
-                            <li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span>  Contact</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
             </nav>
-            <div class="content">
-                <div class="container">
+            <div class="container" style="height:600px;">
+                <div class="col-sm-10 col-sm-offset-1" id="indexwrapper">
                     <div class="row">
-                        <div class="col-md-8">
-                            <h1>Contact</h1>
-                            <div id="body">
-                                <p>You can contact me at amitmac2-at-gmail-dot-com</p>
-                            </div>
+                        <div class="col-md-4">
+                            <img src="images/me.jpg" width="250" height="250">
                         </div>
-                        <div class="col-md-4" id="toc-wrapper">
+                        <div class="col-md-8"><p>I am Amit. I have studied Computer Engineering from Netaji Subhas Institute of Technology, Delhi, India. This blog gives a basic understanding in Machine Learning and shows my passion in this field. Apart from artificial intelligence, I am also interested in Astronomy and Neuroscience. Someday, I would like to work at the intersection of all three and try to understand the relation and theories governing the fields.</p>
+                        <p><b>Find me on: </b>
+                            <a href="https://twitter.com/amitmac22"><img src="images/twitter.jpg" width="32px" height="32px" style="border-radius: 16px; margin-right: 10px;"></a>
+                            <a href="https://in.linkedin.com/in/amitmac"><img src="images/linkedin.ico" width="32px" height="32px" style="border-radius: 16px;"></a>
+                            <a href="https://github.com/amitmac"><img src="images/github.png" width="50px" height="50px"></a></p>
                         </div>
                     </div>
+                    <hr>
                 </div>
             </div>
         </div>

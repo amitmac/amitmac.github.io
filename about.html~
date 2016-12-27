@@ -60,36 +60,17 @@
                     </div><!--/.nav-collapse -->
                 </div>
             </nav>
-            <div class="container">
+            <div class="container" style="height:600px;">
                 <div class="col-sm-10 col-sm-offset-1" id="indexwrapper">
-                    <h3>MACHINE LEARNING</h3>
-                    <p>Machine Learning is a field of study that gives computers the ability to learn without being explicitly programmed. Many successful applications of machine learning exist already, including systems that analyze past sales data to predict customer behavior, recognize faces or spoken speech, and optimize robot behavior so that a task can be completed using minimum resource.</p>
-                    <hr>
-                    <br>
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="posts/2016-12-PLA/index.html">
-                                <div class="post">
-                                    <img src="images/perceptron.png">
-                                </div>
-                                <h4>Perceptron Learning Algorithm</h4>
-                            </a>
+                            <img src="images/me.jpg" width="250" height="250">
                         </div>
-                        <div class="col-md-4">
-                            <a href="posts/2016-12-LR/index.html">
-                                <div class="post">
-                                    <img src="images/linear-reg-2.png">
-                                </div>
-                                <h4>Linear Regression</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="posts/2016-12-LOGREG/index.html">
-                                <div class="post">
-                                    <img src="images/log-reg.png">
-                                </div>
-                                <h4>Logistic Regression</h4>
-                            </a>
+                        <div class="col-md-8"><p>I am Amit. I have studied Computer Engineering from Netaji Subhas Institute of Technology, Delhi, India. This blog gives a basic understanding in Machine Learning and shows my passion in this field. Apart from artificial intelligence, I am also interested in Astronomy and Neuroscience. Someday, I would like to work at the intersection of all three and try to understand the relation and theories governing the fields.</p>
+                        <p><b>Find me on: </b>
+                            <a href="https://twitter.com/amitmac22"><img src="images/twitter.jpg" width="32px" height="32px" style="border-radius: 16px; margin-right: 10px;"></a>
+                            <a href="https://in.linkedin.com/in/amitmac"><img src="images/linkedin.ico" width="32px" height="32px" style="border-radius: 16px;"></a>
+                            <a href="https://github.com/amitmac"><img src="images/github.png" width="50px" height="50px"></a></p>
                         </div>
                     </div>
                     <hr>
