@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>PAC - About Learning</title>
+		<meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!--mobile first-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link href="http://amitmac.github.io/posts/2016-12-PAC/" rel="canonical" />
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="../../jquery-ui-1.11.4/jquery-ui.css">
+        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+        <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="../../css/sticky-footer-navbar.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link href="../../highlight/styles/github.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../highlight/styles/default.css">
+        <script src="../../highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {
+                                    inlineMath: [['$','$'], ['\\(','\\)']]
+                                },
+                                CommonHTML: {
+                                    scale: 100
+                              }});
+        </script>
+        <script type="text/javascript" src="../../js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="../../jquery-ui-1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../js/script.js"></script>
+
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-65608932-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="blog">
+        <div id="">
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand active" href="../../index.html" id="home">ABOUT LEARNING</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../../index.html"><span class="glyphicon glyphicon-pencil"></span>  Blog</a></li>
+                            <li><a href="../../about.html"><span class="glyphicon glyphicon-user"></span>  About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h2>Probably Approximately Correct Learning</h2>
+                            <div class="info">
+                                <p style="font-family: fantasy;">January 1, 2017</p>
+                            </div>
+                            <hr>
+                            <p>We generally talk about a lot of machine learning algorithms but how do we know if a classifier is good enough or how much data points you need to make your classifier good enough. These are some of the questions that arises while we are building a machine learning model. I'll talk about PAC learning framework which would help us answer these very basic questions about machine learning classifiers.</p>
+
+                            <p>$X$ is the set of all possible examples or the input space. $Y$ is the set of all possible labels. To make it simpler, we'll take the case of binary classification where $Y \in \{0, 1\}$. $c$ is the concept which maps the input space to the output, $X \to Y$ and $C$ is set of all the concepts. In real world problems, we don't know about concept or the concept class. We are just given the $X$ and $Y$ and our goal is to come up with a hypothesis $h$ which has the small generalization error or true error compared to $c$. Now there could be multiple hypothesis that can classify a data. We'll call that hypothesis space, $H$.</p>
+
+                            <p>Lets consider that we are given a sample of $m$ data points draw from an unknown distribution $D$ with output labels. We can denote the data as, $( (x_1, y_1,...,(x_m, y_m )$ or $( (x_1, c(x_1)),...,(x_m, c(x_m)) )$. Now we can define the generalization error (error on the unseen data), denoted by $R(h)$, as</p>
+                            <p style="text-align: center;">$R(h) = \text{P}[h(x) \neq c(x)] = \text{E}[\text{1}_{h(x) \neq c(x)}]$ </p><p>where $1_\omega$ is the indicator function of $\omega$.</p>
+                            <p>But we don't know about distribution $D$ and concept $c$, then how can we calculate generalization error. We cannot calculate generalization error but we can calculate empirical error, denoted as $\hat R(h)$ and defined as,</p>
+                            <p style="text-align: center;">$\hat R(h) = \frac{1}{m} \sum_{i=1}^{m}1_{h(x_i) \neq c(x_i)}$ </p>
+                            <p>which is the average error over the sample.</p>
+                            <p>So in a way, generalization error is the expected value of empirical error and we can prove that.</p>
+                            <button class="btn btn-danger collapsed" data-toggle="collapse" data-target="#proof1">Proof</button>
+                            <div id="proof1" class="collapse bg-info">
+                                <p>We can write that,</p>
+                                <p style="text-align: center;">$\text{E}[\hat R(h)] = \text{E}[\frac{1}{m} \sum_{i=1}^{m}1_{h(x_i) \neq c(x_i)}]$</p>
+                                <p>Using linearity of expectation(expectation value of sum of random variables is equal to the sum of individual expectations),</p>
+                                <p style="text-align: center;">$\text{E}[\hat R(h)] = \frac{1}{m} \sum_{i=1}^{m} \text{E}[1_{h(x_i) \neq c(x_i)}]$</p>
+                                <p>Also, since the data is drawn from same distribution independently, expectation of a event is same for any $x_i$ in the sample, therefor we can write,</p>
+                                <p style="text-align: center;">$\text{E}[\hat R(h)] = \frac{1}{m} \sum_{i=1}^{m} \text{E}[1_{h(x) \neq c(x)}] = \text{E}[1_{h(x) \neq c(x)}] = R(h)$</p>
+                                <p>Therefore, we can see that generalization error is the expected value of empirical error.</p>
+                            </div>
+                            <p>Now, a concept class is said to be PAC learnable if there exist an algorithm $\text{A}$ such that for any $\epsilon > 0$ and $0 < \delta \leq 1/2$, for all distributions $D$ on $X$ and for any target concept c \in C, we can say that,</p>
+                            <p style="text-align: center;">$\text{P}[R(h_S) \leq \epsilon] \geq 1 - \delta$</p>
+                            <p>Above equation means that the hypothesis returned by our algorithm $\text{A}$ is approximately correct with error at most \epsilon, with high probability, at least $ 1 - \delta$. We can write it other way as well,</p>
+                            <p style="text-align: center;">$\text{P}[R(h_S) \gt \epsilon] \lt \delta$</p>
+                            <p>We are saying that probability of something bad happening is upper bounded by a constant which is good. When such algorithm $\text{A}$ exists, we say that it is PAC learning algorithm for concept class $C$.Lets take an example with consistent hypothesis space. A consistent hypothesis space is the set of hypothesis which gives zero error on sample data. Here we are limiting the hypothesis space.</p>
+                            <p><b>Learning axis aligned rectangles</b></p>
+                            <p>Suppose we are given sample from $\mathbb{R}^2$ space. $C$ is the set of all axis-aligned rectangles lying in $\mathbb{R}^2$. Now each $c$ is a  particular rectangle with a set of points inside it. Machine Learning problem would be to determine a axis aligned rectangle with small true error using labeled training samples. Our goal is to show that concept class of axis-aligned rectangle is PAC learnable.</p>
+                            <div class="row top-buffer">
+                                <div class="col-md-6">
+                                    <img src="images/1.png" style="text-align: center;">
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="images/2.png" style="text-align: center;">
+                                </div>
+                            </div>
+                            <p>Now suppose our algorithm $\text{A}$ returned a hypothesis which is the tightest rectangle, say $\text{R}^{'}$. This hypothesis gives zero error on sample but what about true error? As we can see that true error is possible only due to the region $\text{R} - \text{R}^{'}$. We can divide the rectangle $\text{R}$ in four regions $r_1, r_2, r_3$ and $r_4$ such that probability mass of each region is $\epsilon/4$. This means that if we draw random points from any distribution $D$, the points will fall in region $r_i$ with probability $\epsilon/4$. These regions might look like in the figure below.</p>
+                            <div class="row top-buffer">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <img src="images/4.png" style="text-align: center;">
+                                </div>
+                            </div>
+                            <p>Now if our hypothesis misses region $r_i$, the error it would make is $1 - \epsilon/4$. And if m points draw i.i.d from the distribution $D$, the error would be $(1 - \epsilon/4)^m$. Now for our hypothesis to make an error at least $\epsilon$ either the rectangle should touch all the sides of the region or it would miss at least one region. So the probability of error at least $\epsilon$ would be the union of all the regions errors, $\bar r_1,\bar r_2,\bar r_3$ and $\bar r_4$ ($\bar r_i$ denotes the negation of probability in that region which denotes the error made by our hypothesis). So now we can write the equations, </p>
+                            <p style="text-align: center;">$\text{P}[R(\text{R}^{'}) > \epsilon] = \text{P}[\bar r_1 \cup \bar r_2 \cup \bar r_3 \cup \bar r_4]$</p>
+                            <p>Using union bound,</p>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <p style="text-align: right;">$\text{P}[R(\text{R}^{'}) > \epsilon]$</p>
+                                </div>
+                                 <div class="col-md-1" style="padding: 0; width: 2%;">
+                                    <p style="text-align: left;">$\leq$</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p style="text-align: left;">$\text{P}[\bar r_1] + \text{P}[\bar r_2] + \text{P}[\bar r_3] + \text{P}[\bar r_4]]$</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                
+                                 <div class="col-md-1 col-md-offset-5" style="padding: 0; width: 2%;">
+                                    <p style="text-align: left;">$\leq$</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p style="text-align: left;">$4(1 - \epsilon/4)^m$</p>
+                                </div>
+                            </div>
+                            <p>Using the inequality, $1 - x \leq \text{exp}(-x)$, we can write that</p>
+                            <p style="text-align: center;">$\text{P}[R(\text{R}^{'}) > \epsilon] \leq 4\text{exp}(-m\epsilon/4)$</p>
+                            <p>We can choose $\delta$ to satisfy the equation $\text{P}[R(\text{R}^{'}) \gt \epsilon] \lt \delta$,</p>
+                            <p style="text-align: center;">$4\text{exp}(-m\epsilon/4) \lt \delta$</p>
+                            <p>From the above equation we can find a relation for m, the number of data points now</p>
+                            <p style="text-align: center;">$m \gt (4/\epsilon)\log(4/\delta)$</p>
+                            <p>So, if we are given at least $(4/\epsilon)\log(4/\delta)$ independent sample data and use the tightest rectangle $\text{R}^{'}$ as our hypothesis $h$, we can classify a given point with error at most $\epsilon$ with probability at least $1 - \delta$.</p>
+                            <hr>
+                            <p>I explained an example for consistent hypothesis case where the hypothesis was selected from finite space, where the error on the sample was zero. There is a general formula for $m$, the number of sample points, as well for such cases which is given by,</p>
+                            <p style="text-align: center;">$m \geq \frac{1}{\epsilon}(\log|H| + \log\frac{1}{\delta})$</p>
+                            <p>$|H|$ is the VC dimension of a hypothesis class, $H$ which I'll post about sometime later. For $m$ number of sample points and $\delta > 0$, we can now define a relation for generalization error,</p>
+                            <p style="text-align: center;">$R(h_S) \leq \frac{1}{m}(\log|H| + \log\frac{1}{\delta})$</p>
+                            <p>From the above relation we can also infer that the upper bound is dependent on $1/m$, which says that more the sample size, lesser the upper bound. Similarly, for $\delta$. However, it also depends directly on size of hypothesis space, $H$ but that is logarithmic. Also, it gives us hope that if hypothesis set is finite, we can find a consistent algorithm, $A$, which is PAC learning algorithm. We can prove that for inconsistent case when hypothesis set is infinite. We'll see that later.</p>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div id="disqus_thread"></div>
+                            <script>
+                                var disqus_config = function () {
+                                    this.page.url = "http://amitmac.github.io/posts/2016-12-PAC/";
+                                    this.page.identifier = "/posts/2016-12-PAC/";
+                                };
+
+                                (function() {  // DON'T EDIT BELOW THIS LINE
+                                    var d = document, s = d.createElement('script');
+                                    
+                                    s.src = '//amitmac-1.disqus.com/embed.js';
+                                    
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                })();
+                            </script>
+                            <noscript>
+                                Please enable JavaScript to view the 
+                                <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+                            </noscript>
+                        </div>
+                    </div>         
+                </div>
+            </div>
+        </div>
+    <script id="dsq-count-scr" src="//amitmac-1.disqus.com/count.js" async></script>
+    </body>
+</html>
