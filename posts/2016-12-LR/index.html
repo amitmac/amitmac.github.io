@@ -134,7 +134,8 @@ data = load('data1.txt');
 X = data(:, 1); y = data(:, 2);
 m = length(y); % number of training examples
 X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
-theta = zeros(2, 1); % initialize fitting parameters
+n = size(X, 2); % the number of features
+theta = zeros(n, 1); % initialize fitting parameters
 
 % Some gradient descent settings
 iterations = 1500;
@@ -164,14 +165,12 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
     m = length(y); % number of training examples
     J_history = zeros(num_iters, 1);
 
-    % the number of features
-    n = size(X, 2);
-
     for iter = 1:num_iters
         theta = theta - (alpha / m) * (X' * (X * theta - y));
 
-        % Save the cost J in every iteration
-        J_history(iter) = computCost(X,y,theta);
+        % Save the cost J in every iteration so we can track the cost 
+        % convergence later
+        J_history(iter) = computeCost(X,y,theta);
     end
 
 end
